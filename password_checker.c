@@ -1,8 +1,3 @@
-/*
- * Password Strength Checker
- * Reads a password from stdin and scores it on length and character variety.
- */
-
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -21,8 +16,6 @@ int main(void) {
         return 1;
     }
 
-    /* Detect truncation: if there's no newline and the buffer is full,
-       the real password was longer than we could read. */
     int truncated = (strchr(password, '\n') == NULL) && (strlen(password) == MAX_LEN - 1);
 
     password[strcspn(password, "\n")] = '\0';
@@ -36,14 +29,13 @@ int main(void) {
         else hasSpecial = 1;
     }
 
-    /* Scoring: character variety (0-4) + length tier (0-2) */
     int varietyScore = hasUpper + hasLower + hasDigit + hasSpecial;
 
     int lengthScore = 0;
     if (length >= 16) lengthScore = 2;
     else if (length >= 8) lengthScore = 1;
 
-    int score = varietyScore + lengthScore; /* max 6 */
+    int score = varietyScore + lengthScore; 
 
     printf("\n--- Analysis ---\n");
     if (truncated) {
