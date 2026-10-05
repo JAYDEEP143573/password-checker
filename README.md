@@ -1,6 +1,6 @@
 # Password Strength Checker
 
-This is are my frist repo on github
+This is are my frist repo on github.
 
 A small C command-line tool that scores a password's strength based on length
 and character variety. Built as a first-year BCA project on the way toward
