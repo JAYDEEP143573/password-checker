@@ -8,7 +8,7 @@ int main(void) {
     char password[MAX_LEN];
     int length, hasUpper = 0, hasLower = 0, hasDigit = 0, hasSpecial = 0;
 
-    printf("=== Password Strength Checker ===\n");
+    printf("== Password Strength Checker ==\n");
     printf("Enter a password: ");
 
     if (fgets(password, sizeof(password), stdin) == NULL) {
@@ -37,7 +37,7 @@ int main(void) {
 
     int score = varietyScore + lengthScore; 
 
-    printf("\n--- Analysis ---\n");
+    printf("\n-- Analysis --\n");
     if (truncated) {
         printf("Note: input was longer than %d characters and was truncated.\n", MAX_LEN - 1);
     }
