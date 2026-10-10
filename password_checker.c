@@ -18,6 +18,9 @@ int main(void) {
         return 1;
     }
 
+    /* Detect truncation: if there's no newline and the buffer is full,
+       the real password was longer than we could read. */
+    
     int truncated = (strchr(password, '\n') == NULL) && (strlen(password) == MAX_LEN - 1);
 
     password[strcspn(password, "\n")] = '\0';
