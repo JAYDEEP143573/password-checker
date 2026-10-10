@@ -34,6 +34,8 @@ int main(void) {
         else hasSpecial = 1;
     }
 
+    /* Scoring: character variety (0-4) + length tier (0-2) */
+    
     int varietyScore = hasUpper + hasLower + hasDigit + hasSpecial;
 
     int lengthScore = 0;
