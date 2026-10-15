@@ -18,8 +18,7 @@ int main(void) {
         return 1;
     }
 
-    /* Detect truncation: if there's no newline and the buffer is full,
-       the real password was longer than we could read. */
+    
     
     int truncated = (strchr(password, '\n') == NULL) && (strlen(password) == MAX_LEN - 1);
 
@@ -34,7 +33,7 @@ int main(void) {
         else hasSpecial = 1;
     }
 
-    /* Scoring: character variety (0-4) + length tier (0-2) */
+
     
     int varietyScore = hasUpper + hasLower + hasDigit + hasSpecial;
 
